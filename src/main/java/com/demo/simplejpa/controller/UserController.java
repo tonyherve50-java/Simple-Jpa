@@ -17,6 +17,11 @@ public class UserController {
         return userService.saveUser(user);
     }
 
+    @PutMapping("/{id}")
+    public User updateUser(@RequestParam Long id, User updatedUser) {
+        return userService.updateUser(id, updatedUser);
+    }
+
     @GetMapping
     public Iterable<User> getAllUsers() {
         return userService.getAllUsers();
